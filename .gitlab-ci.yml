@@ -17,7 +17,7 @@ workflow:
     - if: $CI_COMMIT_BRANCH
 
 variables:
-  NPM_TOKEN: ${CI_JOB_TOKEN}
+  NPM_TOKEN: ${GITLAB_TOKEN}
 
 stages:
   - install
