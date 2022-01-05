@@ -17,7 +17,7 @@ workflow:
     - if: $CI_COMMIT_BRANCH
 
 variables:
-  NPM_TOKEN: ${GITLAB_TOKEN}
+  NPM_TOKEN: ${CI_JOB_TOKEN}
 
 stages:
   - install
@@ -37,7 +37,7 @@ install_npm:
 
 deploy_package:
   stage: deploy
-  image: node:lts
+  image: node:14-buster
   dependencies:
     - install_npm
   script:
